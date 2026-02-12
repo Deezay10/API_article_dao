@@ -1,7 +1,6 @@
 const Article = require("./article-model");
 const IDAOArticle = require("../idaoarticle");
 const { v4: uuidv4 } = require('uuid');
-const article = require("../sequelize/article-model");
 
 class DaoArticleMongoose extends IDAOArticle{
     async selectAll() {

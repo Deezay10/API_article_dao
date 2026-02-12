@@ -23,5 +23,10 @@ router.delete("/article/:uid", async (request, response) => {
     const serviceResponse = await ArticleServices.deleteArticle(request.params.uid);
 
     return response.json(serviceResponse);
+});
+
+router.get("/article/:uid", async (request, response) => {
+    const serviceResponse = await ArticleServices.selectByUid(request.params.uid);
+    return response.json(serviceResponse);
 })
 module.exports = router

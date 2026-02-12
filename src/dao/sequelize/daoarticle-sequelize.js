@@ -19,7 +19,13 @@ class DaoArticleSequelize extends IDAOArticle{
         });
 
         return updatedArticle;
-    }
+    };
+    async selectByUid(uid) {
+        return await Article.findOne({ uid: uid });
+    };
+    async deleteArticle(articleUid) {
+        return await Article.destroy({where: {uid: articleUid}});
+    };
 }
 
 module.exports = DaoArticleSequelize;

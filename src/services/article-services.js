@@ -3,6 +3,7 @@ const DAOFactory = require("../dao/dao-factory");
 const {logger} = require("../logger");
 const {makeService} = require("./service-helper");
 const {v4 : uuidv4}= require('uuid');
+const {getDAOArticle} = require("../dao/dao-factory");
 
 module.exports = {
 
@@ -21,5 +22,9 @@ module.exports = {
     deleteArticle: async (uid) => {
         await DAOFactory.getDAOArticle().deleteArticle(uid);
         return makeService("200", "Article supprimé avec succès");
+    },
+    selectByUid: async (uid) => {
+        const article = await DAOFactory.getDAOArticle().selectByUid(uid)
+        return makeService("200", "Article récupérée avec succès", article);
     }
 }
