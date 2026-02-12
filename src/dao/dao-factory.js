@@ -1,27 +1,27 @@
-const DAOGameMock = require("./mock/daogame-mock");
+const DAOArticleMock = require("./mock/daoarticle-mock");
 module.exports = {
 
     /**
-     * Retourne un IDAOGame
+     * Retourne un IDAOArticle
      */
-    getDAOGame : () => {
+    getDAOArticle : () => {
         // MODE : Sequelize
         if (process.env.BDD_MODE  === "sequelize") {
-            const DAOGameSequelize = require("./sequelize/daogame-sequelize");
-            return new DAOGameSequelize();
+            const DAOArticleSequelize = require("./sequelize/daoarticle-sequelize");
+            return new DAOArticleSequelize();
         }
         // MODE : Mongoose
         else if (process.env.BDD_MODE === "mongodb") {
-            const DAOGameMongoose = require("./mongoose/daogame-mongoose");
-            return new DAOGameMongoose();
+            const DAOArticleMongoose = require("./mongoose/daoarticle-mongoose");
+            return new DAOArticleMongoose();
         }
         // MODE : Mock
         else if (process.env.BDD_MODE === "mock") {
-            const DAOGameMock = require("./mock/daogame-mock");
-            return new DAOGameMock();
+            const DAOArticleMock = require("./mock/daoarticle-mock");
+            return new DAOArticleMock();
         }
         // Fallback
-        const DAOGameMock = require("./mock/daogame-mock");
-        return new DAOGameMock();
+        const DAOArticleMock = require("./mock/daoarticle-mock");
+        return new DAOArticleMock();
     }
 }

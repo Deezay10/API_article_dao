@@ -7,9 +7,9 @@ const app = express();
 
 app.use(express.json());
 // Importer et Injecter route externe
-const game_routes = require('./routes/game-routes');
+const article_routes = require('./routes/article-routes');
 
-app.use(game_routes);
+app.use(article_routes);
 
 // MODE : SEQUELIZE
 if (process.env.BDD_MODE  === "sequelize") {

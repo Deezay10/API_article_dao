@@ -1,6 +1,6 @@
-const IDAOGame = require("../idaogame");
+const IDAOArticle = require("../idaoarticle");
 
-let GAMES = [{
+let Articles = [{
     uid: "1",
     title: "Valorant"
 },
@@ -9,14 +9,14 @@ let GAMES = [{
         title: "Inazuma Eleven Victory Road"
     }];
 
-class DAOGameMock extends IDAOGame {
+class DaoArticleMock extends IDAOArticle {
 
     /**
      * Override explicitement si la methode existe dans le parent
      */
     async selectAll() {
-        return GAMES;
+        return Articles;
     }
 }
 
-module.exports = DAOGameMock;
+module.exports = DaoArticleMock;

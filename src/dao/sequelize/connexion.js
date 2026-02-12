@@ -9,7 +9,7 @@ module.exports = {
                 // Log
                 console.log('Connexion MySQL OK')
                 // DEV MODE
-                const Game = require('./game-model');
+                const Article = require('./article-model');
                 // tester qu'il creer les tables pour nous
                 sequelize.sync()
                     .then(() => console.log('Tables synchronisées'))
