@@ -5,15 +5,12 @@ module.exports = {
      * Retourne un IDAOGame
      */
     getDAOGame : () => {
-        // En amont on aura une config qui permet de savoir le quel on active
-        // Pour l'instant on force en dur que on est en Sequelize
-        // Si Sequelize ?
+        // MODE : Sequelize
         if (process.env.BDD_MODE  === "sequelize") {
             const DAOGameSequelize = require("./sequelize/daogame-sequelize");
             return new DAOGameSequelize();
         }
-        // Si MongoDB ?// const DAOGameMongoose = require("./mongoose/daogame-mongoose");
-        // return new DAOGameMongoose();
+        // MODE : Mongoose
         else if (process.env.BDD_MODE === "mongodb") {
             const DAOGameMongoose = require("./mongoose/daogame-mongoose");
             return new DAOGameMongoose();

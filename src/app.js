@@ -5,6 +5,7 @@ const express = require('express');
 // Initialiser l'application back
 const app = express();
 
+app.use(express.json());
 // Importer et Injecter route externe
 const game_routes = require('./routes/game-routes');
 

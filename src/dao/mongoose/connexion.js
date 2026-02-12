@@ -17,6 +17,6 @@ module.exports = {
         });
 
         // Enclencher à la connexion
-        mongoose.connect('mongodb://127.0.0.1:27017/db_demo');
+        mongoose.connect('mongodb://127.0.0.1:27017/db_APIgames');
     }
 }
