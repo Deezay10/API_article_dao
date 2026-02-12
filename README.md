@@ -10,3 +10,6 @@
 - Mongoose pour MongoDB
 - Sequelize pour MySQL
 - Mock (en production)
+
+### Dans src/services, il y a un fichier qui test :
+- getAll()
